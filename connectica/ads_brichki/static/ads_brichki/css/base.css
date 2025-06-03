@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    text-decoration: none;
+}
+
+.box {
+    margin: 15px;
+}
+
+.item {
+    display: inline-block;
+    margin: 5px;
+    padding: 5px;
+    font-size: 25px;
+}
+
+.heading {
+    font-size: 20px;
+}
+
+.block {
+    background-color: lightgray;
+    padding: 15px;
+}
+
+.ad {
+    margin: 15px 0;
+    padding: 5px;
+    border: 3px solid white;
+}
+
+.aditem {
+    display: inline-block;
+    margin: 5px;
+    padding: 5px;
+    font-size: 20px;
+}
