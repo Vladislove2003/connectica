@@ -24,9 +24,9 @@ class UsersAdsView(TemplateView):
 	def post(self, request, *args, **kwargs):
 		self.extra_context['ads'] = []
 
-		url_ads = f'http://127.0.0.1:8000/api/ads/'\
-				  f'?format=json&pk={request.POST['user_id']}'
-		response = requests.get(url_ads)
+		url_ads = f'http://127.0.0.1:8000/api_ad_list/'
+		response = requests.get(url_ads, 
+			params={'author':request.POST['user_id']})
 
 		if response.status_code == 200:
 			response = response.json()
@@ -44,6 +44,7 @@ class UsersAdsView(TemplateView):
 					"price":data['price'],
 					}
 				serializer = AdSerializer(data=ad_data)
+
 				if serializer.is_valid():
 					ad = serializer.create(ad_data)
 					self.extra_context['ads'].append(ad)
